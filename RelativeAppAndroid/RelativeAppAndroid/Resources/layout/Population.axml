@@ -6,21 +6,22 @@
     android:background="@drawable/background">
     <TextView
         android:id="@+id/app_title"
-        android:text="Conversor de Moedas"
+        android:text="População Contabilizada"
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:gravity="center" />
     <TextView
-        android:id="@+id/txt_dollar"
-        android:text="Dolar"
+        android:id="@+id/txt_pop_brazil"
+        android:text="População Brasil"
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:layout_marginTop="80dp"
         android:layout_marginRight="80dp"
         android:gravity="center" />
     <EditText
-        android:id="@+id/edt_dollar"
+        android:id="@+id/edt_pop_brazil"
         android:text="0"
+        android:editable="false"
         android:numeric="integer"
         android:inputType="number"
         android:layout_width="130dp"
@@ -29,16 +30,17 @@
         android:layout_alignParentRight="true"
         android:gravity="center" />
     <TextView
-        android:id="@+id/txt_real"
-        android:text="Real"
+        android:id="@+id/txt_pop_eua"
+        android:text="População EUA"
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:layout_marginTop="180dp"
         android:layout_marginRight="80dp"
         android:gravity="center" />
     <EditText
-        android:id="@+id/edt_real"
+        android:id="@+id/edt_pop_eua"
         android:text="0"
+        android:editable="false"
         android:numeric="integer"
         android:inputType="number"
         android:layout_width="130dp"
@@ -46,18 +48,42 @@
         android:layout_marginTop="180dp"
         android:layout_alignParentRight="true"
         android:gravity="center" />
-    <Button
-        android:id="@+id/btn_convert"
-        android:text="Converter"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="280dp"
+    <ImageView
+        android:id="@+id/img_flag_brazil"
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentLeft="true"
+        android:scaleType="center" />
+    <ImageView
+        android:id="@+id/img_flag_eua"
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginRight="10dp"
         android:layout_alignParentRight="true"
+        android:scaleType="center" />
+    <Button
+        android:id="@+id/btn_go_to_main_screen"
+        android:text="Ir para tela principal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dp"
         android:gravity="center" />
     <Button
-        android:id="@+id/btn_calc_capitals"
-        android:text="Calcular capitais"
-        android:layout_width="230dp"
+        android:id="@+id/btn_return"
+        android:text="Voltar"
+        android:layout_width="180dp"
         android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true" />
+    <Button
+        android:id="@+id/btn_exit"
+        android:text="Sair"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true" />
 </RelativeLayout>

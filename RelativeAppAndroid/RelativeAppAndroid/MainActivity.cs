@@ -1,13 +1,13 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using Android.Content;
 
 namespace RelativeAppAndroid
 {
 	[Activity(Label = "RelativeAppAndroid", MainLauncher = true, Icon = "@mipmap/icon")]
 	public class MainActivity : Activity
 	{
-		int count = 1;
 
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
@@ -15,6 +15,8 @@ namespace RelativeAppAndroid
 			SetContentView(Resource.Layout.Main);
 
 			Button btnConvert = FindViewById<Button>(Resource.Id.btn_convert);
+			Button btnCapitals = FindViewById<Button>(Resource.Id.btn_calc_capitals);
+
 			EditText edtDollar = FindViewById<EditText>(Resource.Id.edt_dollar);
 			EditText edtReal = FindViewById<EditText>(Resource.Id.edt_real);
 
@@ -29,12 +31,20 @@ namespace RelativeAppAndroid
 					edtReal.Text = reals.ToString();
 
 				}
-				catch (System.Exception e)
+				catch (System.Exception ex)
 				{
-					Toast.MakeText(this, e.Message, ToastLength.Short).Show();				
+					Toast.MakeText(this, ex.Message, ToastLength.Short).Show();				
 				}
 			
 			};
+
+			btnCapitals.Click += delegate {
+
+				Intent intentCapitals = new Intent(this, typeof(CapitalActivity));
+				StartActivity(intentCapitals);
+			};
+
+
 		}
 	}
 }
