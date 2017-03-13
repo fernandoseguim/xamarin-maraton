@@ -2,6 +2,8 @@
 using Android.Widget;
 using Android.OS;
 using Android.Content;
+using SQLite;
+using System.Linq;
 
 namespace RelativeAppAndroid
 {
@@ -13,14 +15,14 @@ namespace RelativeAppAndroid
 		{
 			base.OnCreate(savedInstanceState);
 			SetContentView(Resource.Layout.Main);
-
+            
 			Button btnConvert = FindViewById<Button>(Resource.Id.btn_convert);
 			Button btnCapitals = FindViewById<Button>(Resource.Id.btn_calc_capitals);
 
 			EditText edtDollar = FindViewById<EditText>(Resource.Id.edt_dollar);
 			EditText edtReal = FindViewById<EditText>(Resource.Id.edt_real);
-
-			double reals, dollars;
+            
+            double reals, dollars;
 
 			btnConvert.Click += delegate {
 
@@ -47,5 +49,6 @@ namespace RelativeAppAndroid
 
 		}
 	}
+    
 }
 

@@ -1,19 +1,11 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 
 namespace RelativeAppAndroid
 {
-	[Activity(Label = "CapitalActivity")]
+    [Activity(Label = "CapitalActivity")]
 	public class CapitalActivity : Activity
 	{
 		
@@ -35,9 +27,25 @@ namespace RelativeAppAndroid
 
 				try
 				{
-					int popBrazil = int.Parse(edtImmBrazil.Text) - int.Parse(edtEmiBrazil.Text);
-					int popEua = int.Parse(edtImmEua.Text) - int.Parse(edtEmiEua.Text);
-					Compute(popBrazil, popEua);
+                    int immBrazil = int.Parse(edtImmBrazil.Text);
+                    int emiBrazil = int.Parse(edtImmBrazil.Text);
+                    int immEua = int.Parse(edtImmBrazil.Text);
+                    int emiEua = int.Parse(edtImmBrazil.Text);
+
+                    int popBrazil = immBrazil - emiBrazil;
+                    int popEua = immEua - emiEua;
+
+                    var information = new Information();
+                    information.ImmBrazil = immBrazil;
+                    information.EmiBrazil = emiBrazil;
+                    information.ImmEua = immEua;
+                    information.EmiEua = emiEua;
+
+                    InformationDAO informationDAO = new InformationDAO(this);
+                    informationDAO.Insert(information);
+                    Toast.MakeText(this, "Salvando informações...", ToastLength.Short).Show();
+
+                    Compute(popBrazil, popEua);
 				}
 				catch (System.Exception ex)
 				{

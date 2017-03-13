@@ -36,7 +36,21 @@ namespace RelativeAppAndroid
 				edtPopEua.Text = Intent.GetIntExtra("pop-eua", defaultValue:0).ToString();
 				imgFlaBrazil.SetImageResource(Resource.Drawable.brasil_flag);
 				imgFlaEua.SetImageResource(Resource.Drawable.eua_flag);
-			}
+
+                InformationDAO informationDAO = new InformationDAO(this);
+                var informations = informationDAO.GetAll();
+
+                foreach (var info in informations)
+                {
+
+                    Toast.MakeText(this, info.ImmBrazil.ToString(), ToastLength.Short).Show();
+                    Toast.MakeText(this, info.EmiBrazil.ToString(), ToastLength.Short).Show();
+                    Toast.MakeText(this, info.ImmEua.ToString(), ToastLength.Short).Show();
+                    Toast.MakeText(this, info.EmiEua.ToString(), ToastLength.Short).Show();
+
+                }
+
+            }
 			catch (System.Exception ex)
 			{
 				Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
