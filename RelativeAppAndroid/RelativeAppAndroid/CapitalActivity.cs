@@ -28,9 +28,9 @@ namespace RelativeAppAndroid
 				try
 				{
                     int immBrazil = int.Parse(edtImmBrazil.Text);
-                    int emiBrazil = int.Parse(edtImmBrazil.Text);
-                    int immEua = int.Parse(edtImmBrazil.Text);
-                    int emiEua = int.Parse(edtImmBrazil.Text);
+                    int emiBrazil = int.Parse(edtEmiBrazil.Text);
+                    int immEua = int.Parse(edtImmEua.Text);
+                    int emiEua = int.Parse(edtEmiEua.Text);
 
                     int popBrazil = immBrazil - emiBrazil;
                     int popEua = immEua - emiEua;
